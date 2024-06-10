@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/sobreStyle.css">
+    <title>MyCards</title>
+</head>
+<body>
+    <header id="menuHorizontal">
+        <p id="TituloHeader" ><a href="index.html">MyCards</a></p>
+        <nav class="itemMenu"><a href="sobre.html">Sobre</a></nav>
+        <nav class="itemMenu"><a href="produto.html">Produto</a></nav>
+        <nav class="itemMenu"><a href="index.html">Inicio</a></nav>
+    </header>
+    <div id="formulario">
+        <form>
+            <label for="Nome">Digite seu nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="Nome">Digite seu e-mail:</label>
+            <input type="text" id="email" name="email" required>
+
+            <button onclick="confirmacaoEnvio()" type="submit" id="botaoContato">Enviar</button>
+        </form>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>
