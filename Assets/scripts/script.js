@@ -138,8 +138,14 @@ function mudarConteudo(url) {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            document.getElementById('conteudo').innerHTML = xhr.responseText;
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                document.getElementById('conteudo').innerHTML = xhr.responseText;
+            } else if (xhr.status === 404) {
+                console.error('Erro 404: Página não encontrada.');
+            } else {
+                console.error('Erro ao carregar a página. Status: ' + xhr.status);
+            }
         }
     };
     xhr.send();
