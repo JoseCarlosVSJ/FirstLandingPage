@@ -135,18 +135,18 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function mudarConteudo(url) {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                document.getElementById('conteudo').innerHTML = xhr.responseText;
-            } else if (xhr.status === 404) {
+    const reqst = new XMLHttpRequest();
+    reqst.open('GET', url, true);
+    reqst.onreadystatechange = function() {
+        if (reqst.readyState === 4) {
+            if (reqst.status === 200) {
+                document.getElementById('conteudo').innerHTML = reqst.responseText;
+            } else if (reqst.status === 404) {
                 console.error('Erro 404: Página não encontrada.');
             } else {
-                console.error('Erro ao carregar a página. Status: ' + xhr.status);
+                console.error('Erro ao carregar a página. Status: ' + reqst.status);
             }
         }
     };
-    xhr.send();
+    reqst.send();
 }
