@@ -138,9 +138,6 @@ function mudarConteudo(url) {
     const reqst = new XMLHttpRequest();
     reqst.open('GET', url, true);
     reqst.onreadystatechange = function() {
-        reqst.setRequestHeader('Cache-Control', 'no-cache');
-        reqst.setRequestHeader('Pragma', 'no-cache');
-        reqst.setRequestHeader('Expires', '0');
         if (reqst.readyState === 4) {
             if (reqst.status === 200) {
                 document.getElementById('conteudo').innerHTML = reqst.responseText;
